@@ -51,7 +51,7 @@
         if (master[locale]) {
             needed.push(locale);
             if (master[locale] === true || master[locale] === 1) {
-                toLoad.push(prefix + locale + '/' + suffix);
+                toLoad.push(prefix + 'locale-' + locale + '/' + suffix);
             }
         }
     }
@@ -167,7 +167,7 @@
                                 part = needed[i];
                                 partBundle = master[part];
                                 if (partBundle === true || partBundle === 1) {
-                                    partBundle = req(prefix + part + '/' + suffix);
+                                    partBundle = req(prefix + 'locale-' + part + '/' + suffix);
                                 }
                                 mixin(value, partBundle);
                             }
